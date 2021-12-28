@@ -30,7 +30,7 @@ export default {
       jsnext: true,
       module: true,
       browser: true,
-      extensions: ['.js', '.ts', '.tsx'],
+      extensions: ['.js', '.ts', '.tsx', '.css', '.scss'],
     }),
     eslint(),
     commonjs({
