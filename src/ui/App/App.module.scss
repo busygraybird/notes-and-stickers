@@ -1,3 +1,7 @@
 .app {
-  &__notes {}
+  background-color: antiquewhite;
+
+  &__notes {
+    min-height: 100vh;
+  }
 }

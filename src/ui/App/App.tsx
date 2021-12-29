@@ -5,13 +5,15 @@ import styles from './App.module.scss';
 
 const App: FC = () => {
   return (
-    <div className={styles.appNotes}>
-      {notes &&
-        notes.map((note) => (
-          <Note color={note?.color} key={note.id}>
-            {note.text}
-          </Note>
-        ))}
+    <div className={styles.app}>
+      <div className={styles.appNotes}>
+        {notes &&
+          notes.map((note) => (
+            <Note color={note?.color} key={note.id}>
+              {note.text}
+            </Note>
+          ))}
+      </div>
     </div>
   );
 };

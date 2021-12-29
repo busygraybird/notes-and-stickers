@@ -7,8 +7,8 @@ import html from 'rollup-plugin-html';
 import postcss from 'rollup-plugin-postcss';
 import stylelint from 'stylelint';
 import image from '@rollup/plugin-image';
-import typescript from "rollup-plugin-typescript2";
-import {eslint} from "rollup-plugin-eslint";
+import typescript from 'rollup-plugin-typescript2';
+import { eslint } from 'rollup-plugin-eslint';
 
 export default {
   input: 'src/index.tsx',
@@ -32,11 +32,13 @@ export default {
       browser: true,
       extensions: ['.js', '.ts', '.tsx', '.css', '.scss'],
     }),
-    eslint(),
     commonjs({
       exclude: 'src/**',
     }),
-    typescript(),
+    typescript({
+      declarations: true,
+    }),
+    eslint(),
     stylelint(),
     postcss({
       extract: false,

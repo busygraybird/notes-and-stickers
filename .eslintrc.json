@@ -17,7 +17,7 @@
     "node": true
   },
   "plugins": ["react", "prettier", "@typescript-eslint"],
-  "ignorePatterns": ["*.scss", "*.css", "rollup.config.js"],
+  "ignorePatterns": ["*.scss", "*.css"],
   "rules": {
     "prettier/prettier": "error",
     "react/react-in-jsx-scope": "off",

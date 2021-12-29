@@ -34,9 +34,8 @@
     "rollup-plugin-serve": "^1.1.0",
     "rollup-plugin-stylelint": "^1.0.0",
     "rollup-plugin-typescript2": "^0.31.1",
-    "sass": "^1.43.4",
-    "stylelint": "^14.1.0",
-    "typescript-plugin-css-modules": "^3.4.0"
+    "sass": "^1.45.1",
+    "stylelint": "^14.1.0"
   },
   "dependencies": {
     "@types/react": "^17.0.38",
