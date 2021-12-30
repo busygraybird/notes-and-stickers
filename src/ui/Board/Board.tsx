@@ -7,7 +7,7 @@ import Sticker from '../Sticker';
 import BoardButtons from '../BoardButtons';
 
 const Board = () => {
-  const { items, addNote, addSticker } = usePinnedBoardItems();
+  const { items, addNote, addSticker, updateNote } = usePinnedBoardItems();
 
   const getItemsComponents = () => {
     if (!items?.length) return null;
@@ -19,7 +19,11 @@ const Board = () => {
 
       if (item instanceof NoteType) {
         return (
-          <Note key={item.id} color={item?.color} updateNote={item.update}>
+          <Note
+            key={item.id}
+            color={item?.color}
+            updateNote={(text) => updateNote(item.id, text)}
+          >
             {item?.text}
           </Note>
         );

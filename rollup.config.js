@@ -15,7 +15,7 @@ export default {
   output: {
     file: 'build/bundle.js',
     format: 'iife',
-    sourcemap: true,
+    sourcemap: 'inline',
   },
   plugins: [
     html({

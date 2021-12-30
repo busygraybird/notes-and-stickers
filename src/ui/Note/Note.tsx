@@ -11,7 +11,7 @@ import styles from './Note.module.scss';
 
 interface INote extends HTMLAttributes<ReactElement> {
   color?: string;
-  updateNote: (text: string) => void;
+  updateNote?: (text: string) => void;
 }
 
 // TODO: fix note text updating

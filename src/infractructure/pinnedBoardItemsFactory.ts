@@ -1,6 +1,6 @@
-import IdGenerator from './IdGenerator';
 import Errors from '../constants/errors';
-import PinnedBoardItem from './PinnedBoardItem';
+import IdGenerator from './IdGenerator';
+import PinnedBoardItem from '../domain/PinnedBoardItem';
 
 class PinnedBoardItemsFactory {
   readonly #getNextId: () => number;
@@ -18,10 +18,13 @@ class PinnedBoardItemsFactory {
     };
   }
 
-  createBoardItem = <T extends PinnedBoardItem>(constructor: {
-    new (id: number): T;
-  }): T => {
-    const item = new constructor(this.#getNextId());
+  createBoardItem = <T extends PinnedBoardItem>(
+    constructor: {
+      new (...props: Array<string | number | boolean>): T;
+    },
+    ...props: Array<string | number | boolean>
+  ): T => {
+    const item = new constructor(this.#getNextId(), ...props);
 
     if (!(item instanceof PinnedBoardItem))
       throw new Error(Errors.cannot_create_board_item);
@@ -30,4 +33,6 @@ class PinnedBoardItemsFactory {
   };
 }
 
-export default PinnedBoardItemsFactory;
+const pinnedBoardItemsFactory = new PinnedBoardItemsFactory();
+
+export default pinnedBoardItemsFactory;
