@@ -13,9 +13,13 @@ const Note: FC<INote> = ({ color = '#eecabb', children }) => {
 
   return (
     <div style={noteStyle} className={styles.note}>
-      {children}
+      {children || <Placeholder />}
     </div>
   );
 };
+
+const Placeholder: FC = () => (
+  <span className={styles.notePlaceholder}>I&apos;m note :)</span>
+);
 
 export default Note;

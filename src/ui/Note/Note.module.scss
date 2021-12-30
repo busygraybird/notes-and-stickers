@@ -6,4 +6,8 @@
   display: inline-block;
   border-radius: 20px;
   overflow-y: auto;
+
+  &__placeholder {
+    color: var(--placeholder-text-color);
+  }
 }
