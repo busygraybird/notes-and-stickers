@@ -4,6 +4,7 @@ import { default as NoteType } from '../../domain/Note';
 import { default as StickerType } from '../../domain/Sticker';
 import usePinnedBoardItems from '../../controllers/usePinnedBoardItems';
 import Sticker from '../Sticker';
+import BoardButtons from '../BoardButtons';
 
 const Board = () => {
   const { items, addNote, addSticker } = usePinnedBoardItems();
@@ -26,11 +27,23 @@ const Board = () => {
     });
   };
 
+  const buttons = [
+    {
+      key: 'note',
+      title: 'Add note',
+      handleClick: addNote,
+    },
+    {
+      key: 'sticker',
+      title: 'Add sticker',
+      handleClick: addSticker,
+    },
+  ];
+
   return (
     <div className={styles.appNotes}>
+      <BoardButtons buttons={buttons} />
       {getItemsComponents()}
-      <button onClick={addNote}>Add note</button>
-      <button onClick={addSticker}>Add sticker</button>
     </div>
   );
 };
