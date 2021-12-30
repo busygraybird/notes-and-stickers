@@ -19,7 +19,7 @@ const Board = () => {
 
       if (item instanceof NoteType) {
         return (
-          <Note key={item.id} color={item?.color}>
+          <Note key={item.id} color={item?.color} updateNote={item.update}>
             {item?.text}
           </Note>
         );

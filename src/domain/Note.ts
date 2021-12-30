@@ -11,6 +11,10 @@ class Note extends PinnedBoardItem {
     this.color = color || DEFAULT_NOTE_COLOR;
     this.text = text || '';
   }
+
+  update = (/*text: string*/) => {
+    // TODO: add text updating
+  };
 }
 
 export default Note;
