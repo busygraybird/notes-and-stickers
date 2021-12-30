@@ -1,9 +1,9 @@
 {
   "extends": [
+    "eslint-config-prettier",
     "eslint:recommended",
     "plugin:react/recommended",
-    "plugin:@typescript-eslint/recommended",
-    "prettier"
+    "plugin:@typescript-eslint/recommended"
   ],
   "parser": "@typescript-eslint/parser",
   "parserOptions": {
@@ -16,7 +16,7 @@
   "env": {
     "node": true
   },
-  "plugins": ["react", "prettier", "@typescript-eslint"],
+  "plugins": ["eslint-plugin-prettier", "react", "@typescript-eslint"],
   "ignorePatterns": ["*.scss", "*.css"],
   "rules": {
     "prettier/prettier": "error",

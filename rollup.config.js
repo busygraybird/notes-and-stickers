@@ -32,13 +32,13 @@ export default {
       browser: true,
       extensions: ['.js', '.ts', '.tsx', '.css', '.scss'],
     }),
+    eslint(),
     commonjs({
       exclude: 'src/**',
     }),
     typescript({
       declarations: true,
     }),
-    eslint(),
     stylelint(),
     postcss({
       extract: false,
