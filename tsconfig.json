@@ -9,7 +9,7 @@
         "noImplicitAny": true,
         "outDir": "./build",
         "preserveConstEnums": true,
-        "target": "es2015",
+        "target": "es2017",
         "allowSyntheticDefaultImports": true,
         "jsx": "react-jsx",
     },

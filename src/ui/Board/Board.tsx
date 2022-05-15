@@ -1,15 +1,16 @@
-import styles from '../App/App.module.scss';
 import Note from '../Note';
+import styles from '../App/App.module.scss';
 import { default as NoteType } from '../../domain/Note';
 import { default as StickerType } from '../../domain/Sticker';
 import usePinnedBoardItems from '../../controllers/usePinnedBoardItems';
 import Sticker from '../Sticker';
 import BoardButtons from '../BoardButtons';
+import { ReactElement } from 'react';
 
 const Board = () => {
   const { items, addNote, addSticker, updateNote } = usePinnedBoardItems();
 
-  const getItemsComponents = () => {
+  const getItemsComponents = (): ReactElement[] => {
     if (!items?.length) return null;
 
     return items.map((item) => {
@@ -44,10 +45,12 @@ const Board = () => {
     },
   ];
 
+  const boardItems = getItemsComponents();
+
   return (
     <div className={styles.appNotes}>
       <BoardButtons buttons={buttons} />
-      {getItemsComponents()}
+      {boardItems}
     </div>
   );
 };
